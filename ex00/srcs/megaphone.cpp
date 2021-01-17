@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 12:59:29 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/16 19:44:37 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/01/17 14:53:30 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 void str_upper(std::string &str)
 {
 	for (size_t i = 0; i < str.length(); i++)
-		if (std::islower(str.at(i)))
-			str.replace(i, 1, 1, std::toupper(str.at(i)));
+		if (std::islower(str[i]))
+			str.replace(i, 1, 1, std::toupper(str[i]));
 }
 
 int main(int ac, char **av)
