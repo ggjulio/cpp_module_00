@@ -6,11 +6,12 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 12:59:29 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/16 01:38:54 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/01/16 19:44:37 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <iomanip>
 
 void str_upper(std::string &str)
 {
@@ -31,6 +32,6 @@ int main(int ac, char **av)
 			str += av[i];
 		str_upper(str);
 	}
-	std::cout << str << "\n";
+	std::cout << str << std::endl;
 	return (0);
 }

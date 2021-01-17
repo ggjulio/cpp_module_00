@@ -6,25 +6,26 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 01:49:38 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/16 02:14:26 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/01/16 19:08:09 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <fstream>
 #include <strings.h>
 
 int main()
 {
-	char command[8];
-	
+	std::string command;
+
 	while (true)
 	{
 		std::cin >> command;
-		if (!strcmp("SEARCH", command))
+		if (!command.compare("SEARCH"))
 			std::cout << "SEARCH";
-		else if ("ADD")
+		else if (!command.compare("ADD"))
 			std::cout << "ADD";
-		else if ("EXIT")
+		else if (!command.compare("EXIT"))
 			break;
 	}
 	return 0;
