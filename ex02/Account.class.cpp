@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 11:08:16 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/22 21:19:37 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/01/22 21:20:36 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,5 +118,5 @@ void	Account::_displayTimestamp( void ){
 	time (&rawtime);
 	timeinfo = localtime (&rawtime);
 	std::strftime(buffer, 20, "[%Y%m%d_%H%M%S] ", timeinfo);
-	// std::cout << buffer;
+	std::cout << buffer;
 }
