@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 11:08:16 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/20 13:12:30 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/01/21 20:00:08 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #include <ctime>
 #include <iostream>
 
+int Account::_nbAccounts 			= 0;
+int Account::_totalAmount 			= 0;
+int Account::_totalNbDeposits		= 0;
+int Account::_totalNbWithdrawals	= 0;
 
 int		Account::getNbAccounts( void ){
 	return _nbAccounts;
@@ -28,7 +32,12 @@ int		Account::getNbWithdrawals( void ){
 	return _totalNbWithdrawals;
 }
 void	Account::displayAccountsInfos( void ){
-	
+	_displayTimestamp();
+	std::cout << " account:" << getNbAccounts()
+		<< ";total:" << getTotalAmount()
+		<< ";deposits:" << getNbDeposits()
+		<< ";withdrawals:" << getNbWithdrawals()
+		<< std::endl;
 }
 
 Account::Account( int initial_deposit ) {
@@ -36,13 +45,14 @@ Account::Account( int initial_deposit ) {
 	_displayTimestamp();
 	std::cout << " index:" << _accountIndex
 		<< ";amount:" << _amount
-		<< ";created";
+		<< ";created" << std::endl;
 }
+
 Account::~Account( void ){
 	_displayTimestamp();
 	std::cout << " index:" << _accountIndex
 		<< ";amount:" << _amount
-		<< ";closed";
+		<< ";closed" << std::endl;
 	
 }
 
@@ -69,14 +79,15 @@ void	Account::displayStatus( void ) const{
 	std::cout << " accounts:" << _accountIndex
 		<< ";total:" << _totalAmount
 		<< ";deposits:" << _totalNbDeposits
-		<< ";withdrawals:" << _totalNbWithdrawals;
+		<< ";withdrawals:" << _totalNbWithdrawals
+		<< std::endl;
 }
 
 void	Account::_displayTimestamp( void ){
 	char	buffer[20];
 	time_t rawtime;
 	struct tm * timeinfo;
-	
+
 	time (&rawtime);
 	timeinfo = localtime (&rawtime);
 	std::strftime(buffer, 20, "[%Y%m%d_%H%M%s]", timeinfo);

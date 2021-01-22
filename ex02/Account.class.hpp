@@ -44,9 +44,7 @@ private:
 	int				_accountIndex;
 	int				_amount;
 	int				_nbDeposits;
-	int				_nbWithdrawals;
-
-	Account( void );
+	// int				_nbWithdrawals;
 
 };
 
