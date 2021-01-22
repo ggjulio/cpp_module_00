@@ -55,10 +55,10 @@ OBJ_DIR = obj
 
 SRCS_DIR = $(shell find $(SRC_DIR) -type d)
 
-INC =
+INC = Phonebook.hpp
 vpath %.hpp $(INC_DIR)
 
-SRC = main.cpp 
+SRC = main.cpp Phonebook.cpp
 
 OBJ = $(addprefix  $(OBJ_DIR)/,$(SRC:%.cpp=%.o))
 vpath %.cpp $(SRCS_DIR)
